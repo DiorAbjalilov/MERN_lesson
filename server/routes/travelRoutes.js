@@ -4,13 +4,14 @@ const {
   getAllTravels,
   getTravelById,
   addTravelBook,
+  updateTravelBook,
+  removTravelBook,
 } = require("../controllers/travelController");
 
-// GET all travels books
 router.get("/", getAllTravels);
-// GET one travel book
-router.get("/:id", getTravelById);
-// POST add new travel book
 router.post("/add", addTravelBook);
+router.get("/:id", getTravelById);
+router.put("/:id", updateTravelBook);
+router.delete("/:id", removTravelBook);
 
 module.exports = router;
