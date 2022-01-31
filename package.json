@@ -1,0 +1,31 @@
+{
+  "name": "mern_lesson",
+  "version": "1.0.0",
+  "description": "Travel book",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server",
+    "dev": "nodemon server/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiorAbjalilov/MERN_lesson.git"
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "Abjalilov Diyor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiorAbjalilov/MERN_lesson/issues"
+  },
+  "homepage": "https://github.com/DiorAbjalilov/MERN_lesson#readme",
+  "dependencies": {
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
