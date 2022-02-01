@@ -4,13 +4,21 @@ import { Link } from "react-router-dom";
 
 export const TravelBook = () => {
   const [travelBook, setTravelBook] = useState([]);
+  const [id, setId] = useState("");
   const fetchData = async () => {
     const { data } = await axios.get("http://localhost:5000/api/travel");
     setTravelBook(data.travels);
   };
+
+  const deleteHandler = async (e) => {
+    e.preventDefault();
+    await axios.delete(`http://localhost:5000/api/travel/${id}`);
+    fetchData();
+  };
+
   useEffect(() => {
     fetchData();
-  }, [travelBook]);
+  }, []);
   return (
     <>
       {travelBook.map((tb) => (
@@ -23,8 +31,12 @@ export const TravelBook = () => {
               <Link className="btn btn-primary" to={`/update/${tb._id}`}>
                 Update
               </Link>
-              <form>
-                <button type="submit" className="btn btn-danger mx-2">
+              <form onSubmit={deleteHandler}>
+                <button
+                  onClick={() => setId(tb._id)}
+                  type="submit"
+                  className="btn btn-danger mx-2"
+                >
                   Delete
                 </button>
               </form>
