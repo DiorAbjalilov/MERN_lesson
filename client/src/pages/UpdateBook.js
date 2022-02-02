@@ -67,6 +67,7 @@ export const UpdateBook = () => {
             type="text"
             className="form-control"
             id="image"
+            placeholder="Image URL"
             name="image"
             onChange={(e) => setImage(e.target.value)}
             value={image}
